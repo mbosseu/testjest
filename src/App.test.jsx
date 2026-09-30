@@ -4,12 +4,12 @@ import App from './App.jsx';
 
 function addTask(title) {
   fireEvent.change(screen.getByLabelText('Nouvelle tâche'), { target: { value: title } });
-  fireEvent.click(screen.getByRole('button', { name: 'Ajouter' }));
+  fireEvent.click(screen.getByRole('button', { name: 'ajouter' }));
 }
 
 test('affiche le texte Ajouter sur le bouton', () => {
   render(<App />);
-  expect(screen.getByRole('button', { name: 'Ajouter' })).toHaveTextContent(/^Ajouter$/);
+  expect(screen.getByRole('button', { name: 'ajouter' })).toHaveTextContent(/^Ajouter$/);
 });
 
 test('affiche une liste vide et refuse les tâches vides', () => {
